@@ -17,7 +17,7 @@ phases:
       - echo Build started on `date`
       - cd "$CODEBUILD_SRC_DIR"
       - terraform init -input=false
-      - terraform apply -input=false -auto-approve -var='AWS_ACCESS_KEY="$AWS_ACCESS_KEY"' -var='AWS_SECRET_KEY="$AWS_SECRET_KEY"' -var='INTEGRATION_HOST="$INTEGRATION_HOST"'
+      - terraform apply -input=false -auto-approve -var='AWS_ACCESS_KEY=$AWS_ACCESS_KEY' -var='AWS_SECRET_KEY=$AWS_SECRET_KEY' -var='INTEGRATION_HOST=$INTEGRATION_HOST'
   
   post_build:
     commands:
