@@ -15,7 +15,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - cd .
+      - cd "$CODEBUILD_SRC_DIR"
       - terraform init -input=false
       - terraform apply -input=false -auto-approve
   
