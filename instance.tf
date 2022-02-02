@@ -127,28 +127,3 @@ resource "aws_api_gateway_integration_response" "integrationResponse_500" {
       "text/plain" = file("mappings/vtls/generic-error.vtl")
   }
 }
-
-resource "aws_api_gateway_deployment" "deployment" {
-  rest_api_id = aws_api_gateway_rest_api.api-sample.id
-
-  triggers = {
-    redeployment = uuid() # Force a new deploy everytime. Change it in production.
-  }
-
-  lifecycle {
-    create_before_destroy = true
-  }
-}
-
-resource "aws_api_gateway_stage" "stage" {
-  deployment_id = aws_api_gateway_deployment.deployment.id
-  rest_api_id   = aws_api_gateway_rest_api.api-sample.id
-  stage_name    = "v1"
-  variables     = {
-      "INTEGRATION_HOST": "${var.INTEGRATION_HOST}"
-  }
-}
-
-output deplyment_id {
-  value       = "${aws_api_gateway_deployment.deployment.id}"
-}
