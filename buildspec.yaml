@@ -5,6 +5,9 @@ phases:
       python: 3.8
     commands:
       - echo "Performing manual install of compose cli"
+      - "cd /usr/bin"
+      - "curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip"
+      - "unzip -o terraform.zip"
   pre_build:
     commands:
       - echo Logging in to Docker Hub...
@@ -12,7 +15,17 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - cd "$CODEBUILD_SRC_DIR"
+      - terraform init -input=false
+      - terraform apply -input=false -auto-approve
   
   post_build:
     commands:
-      - echo "build successful"
+      - echo "Terraform completed on `date`"
+
+  post_build:
+    commands:
+
+artifacts:
+  files:
+    - '**/*'
