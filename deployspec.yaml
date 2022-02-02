@@ -1,0 +1,18 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - echo "Performing manual install of compose cli"
+  pre_build:
+    commands:
+      - echo Logging in to Docker Hub...
+
+  build:
+    commands:
+      - echo Test
+  
+  post_build:
+    commands:
+      - echo "deploy successful"
