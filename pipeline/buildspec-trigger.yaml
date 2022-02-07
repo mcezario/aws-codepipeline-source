@@ -7,11 +7,11 @@ phases:
       - echo "Install terraform"
   pre_build:
     commands:
-      - echo Logging in to Docker Hub...
+      - echo Logging Prebuild...
 
   post_build:
     commands:
-      - echo "Terraform completed on `date`"
+      - echo "Logging Post Build on `date`"
 
   post_build:
     commands:
