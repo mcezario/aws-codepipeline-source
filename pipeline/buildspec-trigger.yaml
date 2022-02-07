@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - echo "Install terraform"
+  pre_build:
+    commands:
+      - echo Logging in to Docker Hub...
+
+  post_build:
+    commands:
+      - echo "Terraform completed on `date`"
+
+  post_build:
+    commands:
+
+artifacts:
+  files:
+    - 'pipeline/buildspec-trigger.yaml'
