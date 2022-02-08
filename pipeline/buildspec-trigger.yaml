@@ -8,7 +8,7 @@ phases:
   pre_build:
     commands:
       - echo Logging Prebuild ......
-      - echo "$CODEBUILD_SOURCE_VERSION > commitId
+      - echo $CODEBUILD_SOURCE_VERSION > commitId
       # - echo '[{ "a": "b" }]' > $CODEBUILD_SRC_DIR/build.json
 
   post_build:
