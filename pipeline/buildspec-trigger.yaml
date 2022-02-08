@@ -16,10 +16,6 @@ phases:
   post_build:
     commands:
 
-env:
-  exported-variables:
-    BUILD_ID: "AAAAA"
-
 artifacts:
   files:
     - 'pipeline/buildspec-trigger.yaml'
