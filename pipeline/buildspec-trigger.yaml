@@ -7,8 +7,8 @@ phases:
       - echo "Install ......" 
   pre_build:
     commands:
-      - echo "Logging Prebuild ......"
-      - printf '{ "a": "b" }' >> $CODEBUILD_SRC_DIR/build.json
+      - echo Logging Prebuild ......
+      # - echo '[{ "a": "b" }]' > $CODEBUILD_SRC_DIR/build.json
 
   post_build:
     commands:
