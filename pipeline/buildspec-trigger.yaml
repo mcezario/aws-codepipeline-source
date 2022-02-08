@@ -12,7 +12,7 @@ phases:
   post_build:
     commands:
       - echo "Logging Post Build on `date`"
-      - echo "{\"test\": \"test\"}" >> build.json
+      - echo "{ \"a\": \"b\" }" >> build.json
 
   post_build:
     commands:
