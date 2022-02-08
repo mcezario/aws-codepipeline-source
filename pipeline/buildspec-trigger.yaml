@@ -8,11 +8,11 @@ phases:
   pre_build:
     commands:
       - echo "Logging Prebuild ......"
+      - echo "{ \"a\": \"b\" }" >> build.json
 
   post_build:
     commands:
       - echo "Logging Post Build on `date`"
-      - echo "{ \"a\": \"b\" }" >> build.json
 
   post_build:
     commands:
