@@ -8,7 +8,7 @@ phases:
   pre_build:
     commands:
       - echo Logging Prebuild ......
-      - touch build.json
+      - echo a > build.json
       # - echo '[{ "a": "b" }]' > $CODEBUILD_SRC_DIR/build.json
 
   post_build:
