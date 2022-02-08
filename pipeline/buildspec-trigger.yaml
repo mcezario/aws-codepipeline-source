@@ -8,7 +8,7 @@ phases:
   pre_build:
     commands:
       - echo "Logging Prebuild ......"
-      - echo "{ \"a\": \"b\" }" >> build.json
+      - echo '{ "a": "b" }' >> build.json
 
   post_build:
     commands:
