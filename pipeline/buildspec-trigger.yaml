@@ -12,10 +12,11 @@ phases:
   post_build:
     commands:
       - echo "Logging Post Build on `date`"
+      - echo "{\"test\": \"test\"}" >> build.json
 
   post_build:
     commands:
 
 artifacts:
   files:
-    - 'pipeline/buildspec-trigger.yaml'
+    - 'build.json'
