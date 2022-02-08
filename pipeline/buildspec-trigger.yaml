@@ -7,7 +7,7 @@ phases:
       - echo "Install ......" 
   pre_build:
     commands:
-      - echo "Logging Prebuild ....."
+      - echo "Logging Prebuild ......"
 
   post_build:
     commands:
