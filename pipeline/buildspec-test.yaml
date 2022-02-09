@@ -8,6 +8,7 @@ phases:
     commands:
       - echo Build started on `date`
       - cd "$CODEBUILD_SRC_DIR"
+      - ls -al
   
   post_build:
     commands:
