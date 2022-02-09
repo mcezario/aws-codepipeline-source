@@ -2,16 +2,7 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo Logging Prebuild .....
       - echo $CODEBUILD_SOURCE_VERSION > commitId
-      # - echo '[{ "a": "b" }]' > $CODEBUILD_SRC_DIR/build.json
-
-  post_build:
-    commands:
-      - echo "Logging Post Build on `date`"
-
-  post_build:
-    commands:
 
 artifacts:
   files:
