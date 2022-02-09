@@ -8,9 +8,6 @@ phases:
       - "cd /usr/bin"
       - "curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip"
       - "unzip -o terraform.zip"
-  pre_build:
-    commands:
-      - echo Logging in to Docker Hub...
 
   build:
     commands:
@@ -19,10 +16,6 @@ phases:
       - terraform init -input=false
       - TF_VAR_AWS_ACCESS_KEY=$AWS_ACCESS_KEY TF_VAR_AWS_SECRET_KEY=$AWS_SECRET_KEY TF_VAR_INTEGRATION_HOST=$INTEGRATION_HOST terraform apply -input=false -auto-approve
   
-  post_build:
-    commands:
-      - echo "Terraform completed on `date`"
-
   post_build:
     commands:
 
